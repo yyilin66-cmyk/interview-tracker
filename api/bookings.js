@@ -1,26 +1,22 @@
 import { sql } from '@vercel/postgres';
+import { getUser } from './auth/me.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
   if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
-  // Admin only
-  const token = req.headers.authorization?.replace('Bearer ', '');
-  if (token !== process.env.ADMIN_TOKEN) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
+  const user = await getUser(req);
+  if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
   try {
     const { rows } = await sql`
       SELECT b.*, s.date as slot_date, s.start_min as slot_start_min, s.duration_min as slot_duration_min
       FROM bookings b
       LEFT JOIN available_slots s ON s.id = b.slot_id
+      WHERE b.user_id = ${user.userId}
       ORDER BY b.created_at DESC
       LIMIT 100
     `;

@@ -25,17 +25,30 @@ export default function BookPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(null);
-  const [form, setForm] = useState({ name: "", email: "", company: "", position: "", notes: "" });
+  const [form, setForm] = useState({ name: "", email: "", company: "", position: "", meetingLink: "", notes: "" });
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(null); // booking result
   const [lang, setLang] = useState("cn");
+  const [userName, setUserName] = useState("");
+
+  // Get slug from URL: /book/abc123xy
+  const pathParts = window.location.pathname.split("/").filter(Boolean);
+  const slug = pathParts[1] || "";
 
   useEffect(() => {
-    fetch("/api/slots")
-      .then((r) => r.json())
-      .then((d) => { setSlots(d.slots || []); setLoading(false); })
-      .catch(() => { setError("Failed to load slots"); setLoading(false); });
-  }, []);
+    if (!slug) {
+      setError(lang === "cn" ? "无效的预约链接，请联系候选人获取正确链接" : "Invalid booking link. Please ask the candidate for the correct URL.");
+      setLoading(false);
+      return;
+    }
+    fetch(`/api/slots?slug=${slug}`)
+      .then((r) => {
+        if (r.status === 404) throw new Error("not found");
+        return r.json();
+      })
+      .then((d) => { setSlots(d.slots || []); setUserName(d.userName || ""); setLoading(false); })
+      .catch(() => { setError(lang === "cn" ? "无效的预约链接" : "Invalid booking link"); setLoading(false); });
+  }, [slug]);
 
   const grouped = {};
   slots.forEach((s) => {
@@ -51,7 +64,7 @@ export default function BookPage() {
       const r = await fetch("/api/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slot_id: selected.id, ...form }),
+        body: JSON.stringify({ slot_id: selected.id, name: form.name, email: form.email, company: form.company, position: form.position, meeting_link: form.meetingLink, notes: form.notes }),
       });
       const d = await r.json();
       if (r.ok) {
@@ -98,11 +111,12 @@ export default function BookPage() {
         .slot-btn:hover{border-color:#3B82F6!important;transform:translateY(-1px);box-shadow:0 4px 12px rgba(59,130,246,.2)}
         .slot-btn.sel{border-color:#3B82F6!important;background:#3B82F620!important}
         input:focus,textarea:focus{border-color:#3B82F6!important;outline:none}
+        @keyframes si{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
       `}</style>
 
       <header style={P.header}>
         <div>
-          <h1 style={P.title}>📅 {lang === "cn" ? "预约面试时间" : "Book Interview Time"}</h1>
+          <h1 style={P.title}>📅 {lang === "cn" ? `预约面试 — ${userName}` : `Book Interview — ${userName}`}</h1>
           <p style={P.subtitle}>
             {lang === "cn"
               ? "请选择一个可用时间段，填写信息后提交预约"
@@ -128,10 +142,12 @@ export default function BookPage() {
       <div style={P.grid}>
         {dates.map((date) => {
           const daySlots = grouped[date];
-          const d = new Date(date + "T00:00:00+08:00");
-          const dow = d.getDay();
-          const mm = d.getMonth() + 1;
-          const dd = d.getDate();
+          // Parse date parts directly to avoid timezone issues
+          const [yyyy, mo, da] = date.split("-").map(Number);
+          const bjtDate = new Date(Date.UTC(yyyy, mo - 1, da));
+          const dow = bjtDate.getUTCDay();
+          const mm = mo;
+          const dd = da;
 
           return (
             <div key={date} style={P.dayCard}>
@@ -157,7 +173,7 @@ export default function BookPage() {
                     >
                       <div style={P.slotMain}>
                         <span style={P.slotTime}>{startStr} - {endStr}</span>
-                        <span style={P.slotTz}>BJT</span>
+                        <span style={P.slotTz}>{lang === "cn" ? "北京时间" : "BJT"}</span>
                       </div>
                       <div style={P.slotLocal}>
                         ≈ {localStart.time} - {localEnd.time} {localStart.tz}
@@ -171,21 +187,22 @@ export default function BookPage() {
         })}
       </div>
 
-      {/* Booking form */}
+      {/* Booking form modal */}
       {selected && (
-        <div style={P.formWrap}>
-          <div style={P.formCard}>
+        <div style={P.overlay} onClick={() => setSelected(null)}>
+          <div style={P.modal} onClick={(e) => e.stopPropagation()}>
+            <button style={P.closeBtn} onClick={() => setSelected(null)}>✕</button>
             <h3 style={P.formTitle}>
               {lang === "cn" ? "填写预约信息" : "Enter Your Details"}
             </h3>
             <div style={P.formSelected}>
-              📅 {selected.date} {minToStr(selected.start_min)}-{minToStr(selected.start_min + selected.duration_min)} BJT
+              📅 {selected.date} {minToStr(selected.start_min)}-{minToStr(selected.start_min + selected.duration_min)} {lang === "cn" ? "北京时间" : "BJT"}
             </div>
 
             <div style={P.formGrid}>
               <div>
                 <label style={P.label}>{lang === "cn" ? "姓名 *" : "Name *"}</label>
-                <input style={P.input} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder={lang === "cn" ? "您的姓名" : "Your name"} />
+                <input style={P.input} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder={lang === "cn" ? "您的姓名" : "Your name"} autoFocus />
               </div>
               <div>
                 <label style={P.label}>{lang === "cn" ? "邮箱 *" : "Email *"}</label>
@@ -201,8 +218,12 @@ export default function BookPage() {
               </div>
             </div>
             <div style={{ marginTop: 12 }}>
+              <label style={P.label}>{lang === "cn" ? "面试链接 *" : "Meeting Link *"}</label>
+              <input style={P.input} value={form.meetingLink} onChange={(e) => setForm({ ...form, meetingLink: e.target.value })} placeholder={lang === "cn" ? "Zoom / 飞书 / 腾讯会议链接" : "Zoom / Teams / Meet link"} />
+            </div>
+            <div style={{ marginTop: 12 }}>
               <label style={P.label}>{lang === "cn" ? "备注" : "Notes"}</label>
-              <textarea style={P.textarea} rows={3} value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} placeholder={lang === "cn" ? "面试形式、会议链接等补充信息..." : "Interview format, meeting link, additional info..."} />
+              <textarea style={P.textarea} rows={3} value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} placeholder={lang === "cn" ? "面试形式等补充信息..." : "Interview format, additional info..."} />
             </div>
 
             <div style={P.formActions}>
@@ -210,8 +231,8 @@ export default function BookPage() {
                 {lang === "cn" ? "取消" : "Cancel"}
               </button>
               <button
-                style={{ ...P.submitBtn, opacity: form.name && form.email ? 1 : 0.4 }}
-                disabled={!form.name || !form.email || submitting}
+                style={{ ...P.submitBtn, opacity: form.name && form.email && form.meetingLink ? 1 : 0.4 }}
+                disabled={!form.name || !form.email || !form.meetingLink || submitting}
                 onClick={handleBook}
               >
                 {submitting
@@ -258,8 +279,9 @@ const P = {
   slotTz: { fontSize: 10, color: "#64748B", fontWeight: 500 },
   slotLocal: { fontSize: 11, color: "#64748B" },
 
-  formWrap: { padding: "20px 24px 0", maxWidth: 900, margin: "0 auto" },
-  formCard: { background: "#1a2744", borderRadius: 16, border: "1px solid #2a3a55", padding: "24px 24px 20px", marginTop: 10, animation: "fi .2s ease" },
+  overlay: { position: "fixed", inset: 0, background: "rgba(0,0,0,.6)", backdropFilter: "blur(4px)", display: "flex", justifyContent: "center", alignItems: "center", zIndex: 100, padding: 16 },
+  modal: { position: "relative", background: "#1a2744", borderRadius: 18, border: "1px solid #2a3a55", padding: "28px 26px 22px", width: "100%", maxWidth: 520, maxHeight: "90vh", overflowY: "auto", boxShadow: "0 24px 60px rgba(0,0,0,.5)", animation: "si .2s ease" },
+  closeBtn: { position: "absolute", top: 14, right: 14, background: "none", border: "none", color: "#64748B", fontSize: 18, cursor: "pointer", padding: "4px 8px", borderRadius: 6, transition: "color .15s" },
   formTitle: { fontSize: 16, fontWeight: 700, color: "#F1F5F9", marginBottom: 8 },
   formSelected: { fontSize: 13, color: "#60A5FA", background: "#3B82F615", borderRadius: 8, padding: "8px 12px", marginBottom: 16, fontWeight: 500 },
   formGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 },

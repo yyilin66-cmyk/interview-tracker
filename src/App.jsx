@@ -16,192 +16,50 @@ const PREP_LEVELS = [
 const SAMPLE_DATA = [
   {
     "id": "s1",
-    "company": "MiniMax",
-    "position": "AI架构师",
+    "company": "Acme AI",
+    "position": "AI Product Manager",
     "stage": "interviewing",
     "prepLevel": 2,
-    "folderName": "minimax",
+    "folderName": "acme",
     "rounds": [
-      { "name": "业务一面", "date": "2026-03-10", "time": "11:30", "status": "done", "emailLink": "https://vrfi1sk8a0.feishu.cn/hire/short_url/vtLLftnfSPE" },
-      { "name": "技术二面", "date": "2026-03-17", "time": "11:00", "status": "done", "emailLink": "https://vrfi1sk8a0.feishu.cn/hire/short_url/xBvg3QRZkr8" },
-      { "name": "海外业务面", "date": "2026-03-24", "time": "02:00", "status": "done", "emailLink": "https://vrfi1sk8a0.feishu.cn/hire/short_url/NTEq_mMv5Ug" }
+      { "name": "Phone Screen", "date": "2026-03-10", "time": "11:30", "status": "done", "emailLink": "" },
+      { "name": "Technical Interview", "date": "2026-03-17", "time": "11:00", "status": "done", "emailLink": "" },
+      { "name": "Final Round", "date": "2026-03-24", "time": "14:00", "status": "scheduled", "emailLink": "" }
     ],
-    "jd": "1. 方案设计： 洞察行业机会点，将公司大模型技术、Agent框架转化为具备竞争力的商业化解决方案。需对方案的商业可行性、ROI及市场竞争力负责；\n2. 端到端交付： 负责AI项目从POC到正式交付的全生命周期管理。解决落地过程中的架构瓶颈，确保解决方案在商用场景下的性能达标；\n3. 产品闭环： 收集客户声音，反哺AI平台及大模型产品的规划与迭代，确保产品演进方向紧贴市场实战需求。\n职位要求\n1. 教育背景： 计算机、人工智能、数学等相关专业本科及以上学历；\n2. 落地经验： 具有1年以上AI项目实战落地经验，主导过2个以上大模型相关项目（如RAG知识库、Agent智能体工作流、多模态应用等）的商业化交付；\n3. 技术能力：\n- 精通大模型生态，能够进行Prompt工程优化、API调用能力、AI架构设计及Agent开发；有大模型项目研发、推理调优加速、知识库及agent 相关项目实战经验者优先；\n- 具备基础代码能力，能亲自上手进行核心原型Demo的编写与技术调优。\n4. 商业洞察：\n- 具备业务翻译能力，能将模糊的业务需求转化为清晰的技术架构；\n- 具备敏锐的商业嗅觉，能够评估技术方案的成本、周期与商业收益；\n- 客户沟通与影响力，能够在复杂的商业环境下驱动跨部门协作，具备极强的抗压能力和结果导向精神。",
-    "notes": "准备反问问题",
+    "jd": "We're looking for an AI Product Manager to lead our LLM platform product line. You'll work closely with engineering to ship AI-powered features and drive product strategy.",
+    "notes": "Prepare questions about team structure",
     "createdAt": 1773862932307
   },
   {
     "id": "s2",
-    "company": "智谱",
-    "position": "大模型产品解决方案架构师",
-    "stage": "interviewing",
-    "prepLevel": 1,
-    "folderName": "智谱",
+    "company": "TechCorp",
+    "position": "Senior Product Manager",
+    "stage": "offer",
+    "prepLevel": 3,
+    "folderName": "techcorp",
     "rounds": [
-      { "name": "业务leader面", "date": "2026-03-24", "time": "13:00", "status": "done", "emailLink": "https://vc.feishu.cn/j/240798299" }
+      { "name": "HR Screen", "date": "2026-03-05", "time": "10:00", "status": "done", "emailLink": "" },
+      { "name": "Hiring Manager", "date": "2026-03-12", "time": "14:00", "status": "done", "emailLink": "" },
+      { "name": "Team Interview", "date": "2026-03-19", "time": "11:00", "status": "done", "emailLink": "" }
     ],
-    "jd": "大模型产品解决方案架构师-北京\n北京全职互联网 / 电子 / 网游\n职位描述\n1、深入理解大模型的原理和功能，负责向用户系统的讲述大模型的价值以及相关竞品；\n2、与客户沟通，深入挖掘业务场景，结合大模型的优化完成解决方案的设计；\n3、参与大模型技术选型评估、产品方案设计等工作，确保解决方案的质量和性能；\n4、负责解决方案的技术支持和问题解决，为客户提供高效的服务。\n职位要求\n1、有5年以上解决方案或项目经理相关工作经验，全日制本科或以上学历；\n2、有丰富的AI、云、大数据等行业解决方案经验，有金融&国央企&运营商&政府等行业经验；\n3、敏锐的商业意识，良好的客户需求分析、挖掘能力；\n4、有较强的业务模型分析能力、沟通能力和文档编写能力；\n5、具有良好的团队意识和合作精神，擅于协调与沟通。",
-    "notes": "hr比较想要技术背景候选人\n智谱\n\n目前SA团队主要服务哪些行业的客户？最典型的项目类型是什么？\n OpenClaw带动了全球Token消耗的爆发，智谱刚发布了GLM-5-Turbo专门优化Agent场景。SA团队在推动企业级Agent落地这块，有没有新的方向或打法？**\n\n1. 结果；信息化，ai编程-古法coding-深度合作；组织coding agent定制化而不是做标品，卖人头不要；要么冷；\n2. 解法不是智能体，投人力；定制化；智能化；新进入行业，做定制；落地；\n3. 组织机构和协同机构；数字化和人结合；opc\n\n海淀，k12;\n\n\n\nai院和工程院；\n\n商业化交付；政企bd，业务不\n\n大型样过期，能源客户\n\n国际部，卖token；卖it基建；\n\n垂类，运营商，金融；\n小型客户，销售行为\n\n东南亚，中东'\n\n；沟通能力；编码模型，coding；研发团队；\n\n运营商和金融；\n\n冲劲的人；",
+    "jd": "Lead product strategy for our developer tools platform. 3+ years of PM experience required.",
+    "notes": "Offer received, negotiating compensation",
     "createdAt": 1773862932307
   },
   {
-    "company": "蚂蚁",
-    "position": "AI产品架构师-AI付",
+    "company": "StartupXYZ",
+    "position": "Product Lead",
     "stage": "ended",
-    "prepLevel": 0,
-    "folderName": "蚂蚁",
+    "prepLevel": 1,
+    "folderName": "startupxyz",
     "rounds": [
-      { "name": "HR一面", "date": "2026-03-19", "time": "11:00", "status": "done", "emailLink": "蚂蚁集团 面试通知 (Ant Group interview notice)" },
-      { "name": "HR二面", "date": "2026-03-20", "time": "10:00", "status": "done", "emailLink": "蚂蚁集团 面试通知 (Ant Group interview notice)" },
-      { "name": "产品一面", "date": "2026-03-21", "time": "11:00", "status": "done", "emailLink": "蚂蚁集团 面试通知 (Ant Group interview notice)" },
-      { "name": "HR面", "date": "2026-03-25", "time": "13:30", "status": "done", "emailLink": "蚂蚁集团面试通知 (Ant Group interview notice)" }
+      { "name": "Intro Call", "date": "2026-03-08", "time": "15:00", "status": "done", "emailLink": "" },
+      { "name": "Case Study", "date": "2026-03-15", "time": "13:00", "status": "done", "emailLink": "" }
     ],
-    "jd": "For AI 付，岗位包括但不限：\n1、Agent系统逻辑架构，深度设计 Agent 内部的运转流程；\n2、Skill与agent能力的封装；\n3、参与知识库与RAG构建；\n4、交互范式重构， 重新定义AI Native下的支付交互；\n5、商业与价值挖掘，探索与P端和B端的商业价值挖掘等。\n职位要求\n1、过往岗位和行业背景均不限；\n2、Agent深度玩家：对利用Agent逻辑重构支付流程有深刻见解，能定义Agent的决策边界；\n3、具备一定的产品和商业sense等。",
-    "notes": "这一轮和hr聊完了，这个hr是很资深的那种，有点老板心腹的意思了；花名是笑笑；她看中的是我之前做交易的背景；但是她提出的核心问题，是我考虑用ai怎么做的点，集中于ai怎么在阿里整个生态上构建，包括千问，蚂蚁，飞猪，淘宝闪购等；但其实落实到这个具体的岗位上，他更关心agent如何在支付这个场景发力；也就是用户都已经选好了，如何在支付的层面落实这个agent呢？这个agent能有什么更多的应用呢？如何发掘P和B端的价值呢",
+    "jd": "Early-stage AI startup looking for a product lead to define and ship our core product.",
+    "notes": "Position filled internally",
     "id": "mmwgsh6mmyp5g",
     "createdAt": 1773863941630
-  },
-  {
-    "company": "baidu",
-    "position": "Agent产品经理(数字员工方向)",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "baidu",
-    "rounds": [
-      { "name": "High Peer面", "date": "2026-03-20", "time": "11:00", "status": "done", "emailLink": "https://infoflow.baidu.com/meeting/invite?id=ee0c656e10b6a9be91fc58a5e182ab8e" }
-    ],
-    "jd": "-负责企业级数字员工平台核心产品设计，将大模型能力转化为可落地的业务生产力，打造具备感知、决策、执行能力的智能体产品\n-深入理解AI Agent行业及用户需求，打造面向不同行业的解决方案与行业智能体\n-负责产品全流程管理，从产品定义到上线，确保产品市场竞争力与用户体验卓越性\n-深入研究GPTs、智能体、Agents等前沿技术，探索其在不同行业的应用场景\n-洞察市场趋势，把握行业机会，持续关注AI领域最新动态、技术趋势和竞争对手情况，为产品规划提供决策依据\n职责要求：\n-3年以上产品经理经验，1 年以上大模型/Agent 相关实战经验。独立开发过 GPTs/智能体者优先\n-持续学习前沿的AI大模型领域的新技术，研究AI产品情况，探索AI业务应用新领域，有AI产品生命周期管理经验\n-具备极强的逻辑抽象能力，能够将非标的业务流程标准化、结构化，泛计算机类专业优先\n-加分项： 有 RPA（机器人流程自动化）、BPM（业务流程管理）经验者极佳",
-    "notes": "",
-    "id": "mmwgvl6ho3yu2",
-    "createdAt": 1773864086777
-  },
-  {
-    "company": "MSPbots",
-    "position": "AI PM",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "MSPbots",
-    "rounds": [
-      { "name": "HR一面", "date": "2026-03-19", "time": "14:30", "status": "done", "emailLink": "https://teams.microsoft.com/meet/23150318663618?p=tSOEt2vyLNPbeoGr5d" },
-      { "name": "产品一面", "date": "2026-03-25", "time": "15:00", "status": "done", "emailLink": "https://teams.microsoft.com/meet/28172832037887?p=iyJHvEC91HbMXai76W" }
-    ],
-    "jd": "职位：高级AI产品经理\n我们在找一位 能把 AI 真正做成产品、而不是只停留在概念层 的产品经理，一起把 AI 落地到真实业务和复杂场景中。\n\n你要做什么\n发现 AI 机会： 理解用户流程和业务痛点，判断哪些问题适合用 AI 解决\n做 AI 产品： 把业务问题转成 AI 产品方案，设计 MVP 并持续迭代\n设计 AI 功能： 与工程 / 数据团队一起定义输入输出、数据来源和效果标准\n跑实验、看结果： 通过数据和实验验证 AI 效果，持续优化准确率与体验\n推进交付： 协调研发上线 AI 功能，支持测试、文档和内部推广\n\n我们希望你具备\n2—6 年AI产品相关经验\n理解 AI 产品的基本原理（模型、Prompt、规则、数据依赖、评估方式等），不要求写代码\n擅长拆解复杂问题，能在不确定中快速迭代\n有数据意识，能用指标和实验驱动决策\n能和工程团队顺畅沟通，对新技术保持好奇",
-    "notes": "",
-    "id": "mmwmloqrg1irh",
-    "createdAt": 1773873702531
-  },
-  {
-    "company": "zoom",
-    "position": "ai创新工具产品",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "zoom",
-    "rounds": [
-      { "name": "high peer一面", "date": "2026-03-24", "time": "10:00", "status": "done", "emailLink": "https://success.zoom.us/j/99342713076?pwd=dGJtkT2UZbMS0ZUWMsLcmv76ZGpPba.1" },
-      { "name": "leader面", "date": "2026-03-31", "time": "06:30", "status": "scheduled", "emailLink": "https://success.zoom.us/j/97117600530?pwd=ZmecjQeebwQGqmW9Ca1ta80O3tQ5R1.1" }
-    ],
-    "jd": "负责创新协同办公产品某个核心产品模块的产品策划工作，主导并确保用户体验和用户增长目标的达成；zoom docs加zoom meeting的AI feature\n\n深入理解客户场景和业务诉求，带领产品、设计和研发团队，系统开展产品需求分析、方案设计和用户体验优化；\n\n构建并持续优化数据监控体系，深入分析产品数据，制定相应改进方案；\n\n与商业化团队保持紧密对接，深入理解客户需求并协助促成销售；\n\n持续丰富和完善产品方案，全面提升产品的市场竞争力与创新性。\n\n任职要求：\n统招本科及以上学历，具备 4年以上 互联网产品经验，计算机、设计等相关专业优先；\n能在工作中使用 英语 沟通和表达；\n对客户需求具有敏锐洞察力，善于把握用户体验，深入理解诉求本质；\n并能高效协调各方推动项目落地；\n拥有较强的开放性思维、自驱力和韧性，能在快节奏环境下独立开展工作并持续推进项目进展；\n思维逻辑清晰，善于分析问题本质，能够抽丝剥茧地探索需求背后的机会点，并提供系统性解决方案；\n热衷尝试各类办公效率工具和 AI 产品，对打造新一代办公协作类产品充满热情。\n\n加分项：\n有海外产品经验；\n有 AI 产品经验。",
-    "notes": "",
-    "id": "mmwzom6t8f864",
-    "createdAt": 1773895674197
-  },
-  {
-    "company": "boss直聘",
-    "position": "ats产品经理",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "boss",
-    "rounds": [
-      { "name": "业务面", "date": "2026-03-20", "time": "14:00", "status": "done", "emailLink": "https://zpurl.cn/119v5WKmCYJ" }
-    ],
-    "jd": "负责 ATS系统（申请人追踪系统）的产品建设，能对产品的最终结果负责；\n负责考试系统和测评产品的规划、落地；\n能通过对业务侧需求的理解，找到问题的本质；\n能快速响应业务需求，高质量完成需求落地；\n能找到 AI和系统结合 的落地点，并能给出结果指标。\n\n【任职要求】：\n有互联网B端产品、ATS系统、人力招聘系统、考测系统经验者优先；\n善于拆解问题，能把复杂问题拆解落地；\n善于思考，保持好奇心。",
-    "notes": "",
-    "id": "mmx548szuzvx9",
-    "createdAt": 1773904801427
-  },
-  {
-    "company": "leapmind",
-    "position": "AI产品经理",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "",
-    "rounds": [
-      { "name": "", "date": "2026-03-24", "time": "11:00", "status": "done", "emailLink": "" }
-    ],
-    "jd": "LeapMind 是一家技术驱动的，帮助客户做真实业务增长的 AI初创公司，目标是打造AI时代的全球数字化营销解决方案。",
-    "notes": "",
-    "id": "mmx8iz89ii742",
-    "createdAt": 1773910527705
-  },
-  {
-    "company": "高德",
-    "position": "搜推体验-用户体验评测专家",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "高德",
-    "rounds": [
-      { "name": "业务一面", "date": "2026-03-30", "time": "11:00", "status": "scheduled", "emailLink": "https://mail.google.com/mail/u/0/#search/%E9%AB%98%E5%BE%B7/FMfcgzQgKvCSZhKCQDzkwtQvnZWRMGCV" }
-    ],
-    "jd": "负责高德地图搜索、内容评测体系，结合业务演进和发展，保障评测体系和数据牵引进度，有全局推动追踪能力，驱动体验效果。\n\n深入分析用户行为和市场趋势，识别用户需求，以创新的方式在前端展现和定义。\n\n紧密与底层数据/引擎/服务端协作，确保从数据采集、处理到展示的链路统一性和数据质量，推动数据驱动的产品决策。\n\n监控产品性能指标，如用户参与度、搜索准确率和推荐效果，定期进行优化和调整。\n\n对行业、竞品和新产品洞察分析，追踪最新的互联网技术，推动大模型自动化评测体系。\n\n职位要求：\n有专业深度的评测体系经验，具备大规模级产品生命周期管理经验。\n至少5年以上互联网产品经验，具有搜索评测产品经验和管理经验。\n精通数据分析，熟悉数据处理工具，对数据驱动的产品设计有深入理解。\n具备出色的项目管理能力，能够在多任务环境中有效安排优先级。",
-    "notes": "",
-    "id": "mmxyt44njnplo",
-    "createdAt": 1773954670631
-  },
-  {
-    "company": "抖音电商",
-    "position": "标签产品经理",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "",
-    "rounds": [
-      { "name": "业务面", "date": "2026-03-27", "time": "11:00", "status": "scheduled", "emailLink": "https://t.zijieimg.com/Jb4dDbf5AwI/" }
-    ],
-    "jd": "1、负责抖音电商的用户标签和画像策略，负责搭建基础用户画像标签、兴趣体系标签、价值体系标签等，支持标签建设的AI方向，利用大模型对用户进行分类、上标，支持标签策略分析并协助业务落地；\n2、负责标签数据下钻及策略挖掘分析，结合抖音电商的核心业务目标，从人货场等多个维度，挖掘不同画像的用户特征并沉淀为标签资产，助力业务应用以实现增长；\n3、保障标签能力的可用性及完整性，和上下游团队合作，做好质量评估、数据接入并支持应用落地；\n4、提升平台工具的易用性和拓展能力，将标签能力和拓展落地到产品功能上，提升精细化运营的能力。\n职位要求\n1、有标签建设等产品经验，有标签准确性评估、追踪落地经验的为优先考虑，需要有中台工作经验、横向业务工作经验，有全面的用户视角topdown的思维方式；\n2、具备出色的数据分析和问题拆解能力，熟悉常用的数据统计和分析方法；\n3、对AI行业有好奇心，了解大模型，有大模型训练数据生产、评估经验者加分；\n4、有较强的跨部门沟通协作能力，能够创造良好的沟通氛围。",
-    "notes": "",
-    "id": "mmydwut13i92u",
-    "createdAt": 1773980039413
-  },
-  {
-    "company": "maxgent",
-    "position": "agent产品经理",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "maxgent",
-    "rounds": [
-      { "name": "业务面", "date": "2026-03-25", "time": "11:00", "status": "done", "emailLink": "https://pcngni3nj9ss.feishu.cn/hire/short_url/NQhQhGJ7dKQ" }
-    ],
-    "jd": "田值openclaw方向的创业公司",
-    "notes": "",
-    "id": "mmyjti95xmwvg",
-    "createdAt": 1773989960873
-  },
-  {
-    "company": "TikTok",
-    "position": "平台治理产品经理实习",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "tt",
-    "rounds": [
-      { "name": "面", "date": "2026-03-26", "time": "02:15", "status": "done", "emailLink": "https://t.zijieimg.com/p2jQ7yewEcI/" }
-    ],
-    "jd": "TikTok LIVE Ecosystem Governance - Product Manager Intern",
-    "notes": "",
-    "id": "mn2ldiiyq3o1q",
-    "createdAt": 1774234438666
-  },
-  {
-    "company": "商汤",
-    "position": "大装置-技术产品经理",
-    "stage": "interviewing",
-    "prepLevel": 0,
-    "folderName": "商汤",
-    "rounds": [
-      { "name": "一面", "date": "2026-03-23", "time": "14:00", "status": "done", "emailLink": "SenseTime商汤科技面试通知-来自于商汤科技" }
-    ],
-    "jd": "agent和rag",
-    "notes": "",
-    "id": "mn2mucyss6lc0",
-    "createdAt": 1774236904228
   }
 ];
 
@@ -228,7 +86,7 @@ const DL = "~/Downloads";
 
 let _drag = null;
 
-export default function App() {
+export default function App({ user, token, onLogout }) {
   const [items, setItems] = useState([]);
   const [ok, setOk] = useState(false);
   const [edit, setEdit] = useState(null);
@@ -239,20 +97,48 @@ export default function App() {
   const [page, setPage] = useState("board"); // board | prep | book
   const [showData, setShowData] = useState(false);
   const fileRef = useRef(null);
+  const saveTimer = useRef(null);
 
+  // Load items from API (or fall back to localStorage for offline/no-auth)
   useEffect(() => {
-    try {
-      const r = localStorage.getItem("iv-v4");
-      if (r) setItems(JSON.parse(r));
-      else setItems(SAMPLE_DATA);
-    } catch { setItems(SAMPLE_DATA); }
-    setOk(true);
-  }, []);
+    if (token) {
+      fetch("/api/items", { headers: { Authorization: `Bearer ${token}` } })
+        .then((r) => r.json())
+        .then((d) => {
+          if (d.items && d.items.length > 0) {
+            setItems(d.items);
+          } else {
+            // New user: start with empty data
+            setItems([]);
+          }
+        })
+        .catch(() => { setItems([]); })
+        .finally(() => setOk(true));
+    } else {
+      try {
+        const r = localStorage.getItem("iv-v4");
+        if (r) setItems(JSON.parse(r));
+        else setItems(SAMPLE_DATA);
+      } catch { setItems(SAMPLE_DATA); }
+      setOk(true);
+    }
+  }, [token]);
 
+  // Debounced save to API (and localStorage only if not logged in)
   useEffect(() => {
     if (!ok) return;
-    try { localStorage.setItem("iv-v4", JSON.stringify(items)); } catch {}
-  }, [items, ok]);
+    if (!token) { try { localStorage.setItem("iv-v4", JSON.stringify(items)); } catch {} }
+    if (token) {
+      clearTimeout(saveTimer.current);
+      saveTimer.current = setTimeout(() => {
+        fetch("/api/items", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify({ items }),
+        }).catch(() => {});
+      }, 1500);
+    }
+  }, [items, ok, token]);
 
   const ins = (d) => { setItems((p) => [...p, { ...d, id: gid(), createdAt: Date.now() }]); setAdd(false); };
   const upd = (id, d) => setItems((p) => p.map((i) => (i.id === id ? { ...i, ...d } : i)));
@@ -339,6 +225,7 @@ export default function App() {
             <button style={{ ...S.pageTab, ...(page === "board" ? S.pageTabAct : {}) }} onClick={() => setPage("board")}>看板</button>
             <button style={{ ...S.pageTab, ...(page === "prep" ? S.pageTabAct : {}) }} onClick={() => setPage("prep")}>Mock 准备</button>
             <button style={{ ...S.pageTab, ...(page === "book" ? S.pageTabAct : {}) }} onClick={() => setPage("book")}>约面</button>
+            <button style={{ ...S.pageTab, ...(page === "funnel" ? S.pageTabAct : {}) }} onClick={() => setPage("funnel")}>漏斗</button>
           </div>
           <span style={S.cnt}>{items.filter((i) => i.stage === "interviewing").length} 进行中</span>
         </div>
@@ -363,12 +250,23 @@ export default function App() {
                     <span style={S.dropHint}>覆盖或合并</span>
                   </button>
                   <input ref={fileRef} type="file" accept=".json" style={{ display: "none" }} onChange={importData} />
+                  <button className="drop-item" style={{ ...S.dropItem, color: "#EF4444" }} onClick={() => { if (confirm("确定清空所有面试数据？此操作不可恢复！")) { setItems([]); setShowData(false); } }}>
+                    <span>🗑 清空数据</span>
+                    <span style={S.dropHint}>不可恢复</span>
+                  </button>
                   <div style={S.dropNote}>导出会下载包含所有面试数据的 JSON 文件，可用于备份和迁移</div>
                 </div>
               </>
             )}
           </div>
           <button style={S.ab} onClick={() => setAdd(true)}>＋ 新增</button>
+          {user && (
+            <div style={S.userWrap}>
+              {user.avatar_url && <img src={user.avatar_url} style={S.avatar} referrerPolicy="no-referrer" />}
+              <span style={S.userName}>{user.name}</span>
+              <button style={S.logoutBtn} onClick={onLogout} title="退出登录">退出</button>
+            </div>
+          )}
         </div>
       </header>
 
@@ -410,7 +308,8 @@ export default function App() {
       </>}
 
       {page === "prep" && <PrepView items={items} local={local} />}
-      {page === "book" && <BookingView items={items} />}
+      {page === "book" && <BookingView items={items} token={token} userId={user?.id} userSlug={user?.slug} />}
+      {page === "funnel" && <FunnelView items={items} />}
 
       {add && <AddM onClose={() => setAdd(false)} onSave={ins} />}
       {edit && <EditM item={items.find((i) => i.id === edit)} local={local} onClose={() => setEdit(null)} onSave={(d) => { upd(edit, d); setEdit(null); }} onDel={() => del(edit)} />}
@@ -599,7 +498,7 @@ function EditM({ item, local, onClose, onSave, onDel }) {
 }
 
 /* ── 约面 Booking View ── */
-function BookingView({ items }) {
+function BookingView({ items, token, userId, userSlug }) {
   const [startH, setStartH] = useState(9);
   const [endH, setEndH] = useState(15);
   const [days, setDays] = useState(14);
@@ -616,21 +515,10 @@ function BookingView({ items }) {
   const [loadingBookings, setLoadingBookings] = useState(false);
   const [showBookings, setShowBookings] = useState(false);
 
-  const getAdminToken = () => {
-    let token = localStorage.getItem("admin-token");
-    if (!token) {
-      token = prompt("请输入 Admin Token（在 Vercel 环境变量中设置的 ADMIN_TOKEN）：");
-      if (token) localStorage.setItem("admin-token", token);
-    }
-    return token;
-  };
-
   const handlePublish = async () => {
-    const token = getAdminToken();
-    if (!token) return;
+    if (!token) return alert("请先登录");
     setPublishing(true);
     try {
-      // Collect all available slots from the current grid
       const availSlots = [];
       allDates.forEach(({ date }) => {
         getSlots(date).forEach((s) => {
@@ -646,19 +534,17 @@ function BookingView({ items }) {
       });
       if (r.ok) {
         setPublished(true);
-        setTimeout(() => setPublished(false), 3000);
+        setTimeout(() => setPublished(false), 5000);
       } else {
         const d = await r.json();
         alert(d.error || "Publish failed");
-        if (r.status === 401) localStorage.removeItem("admin-token");
       }
     } catch { alert("Network error"); }
     setPublishing(false);
   };
 
   const loadBookings = async () => {
-    const token = getAdminToken();
-    if (!token) return;
+    if (!token) return alert("请先登录");
     setLoadingBookings(true);
     setShowBookings(true);
     try {
@@ -669,7 +555,6 @@ function BookingView({ items }) {
         const d = await r.json();
         setBookings(d.bookings || []);
       } else {
-        if (r.status === 401) localStorage.removeItem("admin-token");
         alert("Failed to load bookings");
       }
     } catch { alert("Network error"); }
@@ -695,13 +580,17 @@ function BookingView({ items }) {
   };
 
   const allDates = [];
-  const today = new Date();
-  for (let d = 1; d <= days; d++) {
-    const dt = new Date(today);
-    dt.setDate(today.getDate() + d);
+  // Use Beijing time (UTC+8) for date generation
+  const nowBJT = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Shanghai" }));
+  for (let d = 0; d <= days; d++) {
+    const dt = new Date(nowBJT);
+    dt.setDate(nowBJT.getDate() + d);
     const dow = dt.getDay();
     if (!includeWeekend && (dow === 0 || dow === 6)) continue;
-    const ds = dt.toLocaleDateString("sv-SE");
+    const yyyy = dt.getFullYear();
+    const mm = String(dt.getMonth() + 1).padStart(2, "0");
+    const dd = String(dt.getDate()).padStart(2, "0");
+    const ds = `${yyyy}-${mm}-${dd}`;
     allDates.push({ date: ds, dow, dateObj: dt });
   }
 
@@ -821,8 +710,11 @@ function BookingView({ items }) {
           >
             {publishing ? "⏳ 发布中..." : published ? "✓ 已发布" : "🚀 发布到预约页"}
           </button>
-          <button style={S.bookingsBtn} onClick={loadBookings}>
-            📋 查看预约
+          <button style={S.shareBtn} onClick={() => {
+            const link = `${window.location.origin}/book/${userSlug || "error"}`;
+            navigator.clipboard.writeText(link).then(() => alert(`预约链接已复制：\n${link}`));
+          }}>
+            🔗 分享预约页
           </button>
         </div>
       </div>
@@ -915,8 +807,8 @@ function BookingView({ items }) {
         <div style={S.publishHint}>
           ✅ 时间段已发布！把下面链接发给猎头即可预约：
           <div style={S.publishLink}>
-            <code>{window.location.origin}/book</code>
-            <button style={S.copySmBtn} onClick={() => { navigator.clipboard.writeText(window.location.origin + "/book"); }}>复制</button>
+            <code>{window.location.origin}/book/{userSlug || "error"}</code>
+            <button style={S.copySmBtn} onClick={() => { navigator.clipboard.writeText(window.location.origin + "/book/" + (userSlug || "error")); }}>复制</button>
           </div>
         </div>
       )}
@@ -1118,6 +1010,137 @@ function PrepView({ items, local }) {
   );
 }
 
+/* ── 漏斗图 View ── */
+function FunnelView({ items }) {
+  const total = items.length;
+  const interviewing = items.filter((i) => i.stage === "interviewing").length;
+  const ended = items.filter((i) => i.stage === "ended").length;
+  const offers = items.filter((i) => i.stage === "offer").length;
+
+  // Count total rounds across all items
+  const totalRounds = items.reduce((sum, i) => sum + (i.rounds || []).length, 0);
+  const doneRounds = items.reduce((sum, i) => sum + (i.rounds || []).filter((r) => r.status === "done").length, 0);
+  const scheduledRounds = items.reduce((sum, i) => sum + (i.rounds || []).filter((r) => r.status === "scheduled").length, 0);
+
+  // Funnel stages with computed data
+  const funnel = [
+    { label: "投递/联系", value: total, color: "#6366F1", desc: "所有面试机会" },
+    { label: "面试中", value: interviewing, color: "#F59E0B", desc: "正在进行的" },
+    { label: "已完成轮次", value: doneRounds, color: "#3B82F6", desc: `共 ${totalRounds} 轮，${scheduledRounds} 轮待面` },
+    { label: "已结束", value: ended, color: "#64748B", desc: "流程结束" },
+    { label: "Offer", value: offers, color: "#10B981", desc: offers > 0 ? "🎉" : "继续加油！" },
+  ];
+
+  const maxVal = Math.max(...funnel.map((f) => f.value), 1);
+
+  // Per-company breakdown
+  const companyStats = items.map((it) => {
+    const rounds = it.rounds || [];
+    const done = rounds.filter((r) => r.status === "done").length;
+    const total = rounds.length;
+    return { company: it.company, position: it.position, stage: it.stage, done, total, prepLevel: it.prepLevel || 0 };
+  }).sort((a, b) => b.done - a.done);
+
+  return (
+    <div style={S.prepWrap}>
+      <div style={S.prepHeader}>
+        <div>
+          <h2 style={S.prepTitle}>📊 面试漏斗</h2>
+          <span style={S.prepSub}>整体面试进度一览</span>
+        </div>
+      </div>
+
+      {/* Funnel Chart */}
+      <div style={S.funnelChart}>
+        {funnel.map((f, i) => {
+          const widthPct = Math.max((f.value / maxVal) * 100, 8);
+          const rate = i > 0 && funnel[i - 1].value > 0 ? ((f.value / funnel[i - 1].value) * 100).toFixed(0) : null;
+          return (
+            <div key={i} style={S.funnelRow}>
+              <div style={S.funnelLabel}>
+                <span style={S.funnelName}>{f.label}</span>
+                <span style={S.funnelDesc}>{f.desc}</span>
+              </div>
+              <div style={S.funnelBarWrap}>
+                <div style={{
+                  ...S.funnelBar,
+                  width: `${widthPct}%`,
+                  background: `linear-gradient(90deg, ${f.color}, ${f.color}88)`,
+                }}>
+                  <span style={S.funnelVal}>{f.value}</span>
+                </div>
+                {rate !== null && (
+                  <span style={S.funnelRate}>↓ {rate}%</span>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Summary cards */}
+      <div style={S.funnelCards}>
+        <div style={S.funnelCard}>
+          <div style={S.funnelCardVal}>{total}</div>
+          <div style={S.funnelCardLabel}>总机会</div>
+        </div>
+        <div style={S.funnelCard}>
+          <div style={{ ...S.funnelCardVal, color: "#F59E0B" }}>{interviewing}</div>
+          <div style={S.funnelCardLabel}>进行中</div>
+        </div>
+        <div style={S.funnelCard}>
+          <div style={{ ...S.funnelCardVal, color: "#3B82F6" }}>{doneRounds}/{totalRounds}</div>
+          <div style={S.funnelCardLabel}>完成轮次</div>
+        </div>
+        <div style={S.funnelCard}>
+          <div style={{ ...S.funnelCardVal, color: "#10B981" }}>{offers}</div>
+          <div style={S.funnelCardLabel}>Offer</div>
+        </div>
+        <div style={S.funnelCard}>
+          <div style={{ ...S.funnelCardVal, color: "#8B5CF6" }}>{total > 0 ? ((offers / total) * 100).toFixed(1) : 0}%</div>
+          <div style={S.funnelCardLabel}>转化率</div>
+        </div>
+      </div>
+
+      {/* Per-company table */}
+      <div style={{ ...S.prepTable, marginTop: 20 }}>
+        <div style={S.prepRow0}>
+          <span style={{ ...S.prepTh, flex: 1.5 }}>公司</span>
+          <span style={{ ...S.prepTh, flex: 2 }}>岗位</span>
+          <span style={{ ...S.prepTh, flex: 1 }}>阶段</span>
+          <span style={{ ...S.prepTh, flex: 1 }}>轮次进度</span>
+          <span style={{ ...S.prepTh, flex: 2 }}>进度条</span>
+        </div>
+        {companyStats.map((c, i) => {
+          const stageInfo = STAGES.find((s) => s.id === c.stage) || STAGES[0];
+          const pct = c.total > 0 ? (c.done / c.total) * 100 : 0;
+          return (
+            <div key={i} style={S.prepRowItem}>
+              <div style={{ flex: 1.5 }}>
+                <div style={S.prepCo}>{c.company}</div>
+              </div>
+              <div style={{ flex: 2 }}>
+                <div style={S.prepPos}>{c.position}</div>
+              </div>
+              <div style={{ flex: 1 }}>
+                <span style={{ ...S.pl, background: stageInfo.color + "20", color: stageInfo.color }}>{stageInfo.emoji} {stageInfo.label}</span>
+              </div>
+              <div style={{ flex: 1 }}>
+                <span style={{ fontSize: 13, color: "#CBD5E1", fontWeight: 600 }}>{c.done}/{c.total}</span>
+              </div>
+              <div style={{ flex: 2 }}>
+                <div style={S.progressBg}>
+                  <div style={{ ...S.progressFill, width: `${pct}%`, background: stageInfo.color }} />
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function Ov({ children, onClose, wide }) {
   return (
     <div style={S.ov} onClick={onClose}>
@@ -1273,9 +1296,31 @@ const S = {
   bkSlotOcc: { background: "#EF444410", border: "1px solid #EF444425", color: "#EF4444" },
   bkSlotTime: { fontWeight: 600, fontSize: 12 },
   bkSlotTag: { fontSize: 10, opacity: .8 },
+  /* funnel */
+  funnelChart: { background: "rgba(22,32,50,.6)", borderRadius: 14, border: "1px solid #1e293b88", padding: "24px 20px", marginBottom: 16 },
+  funnelRow: { display: "flex", alignItems: "center", gap: 16, marginBottom: 16 },
+  funnelLabel: { width: 120, flexShrink: 0, textAlign: "right" },
+  funnelName: { display: "block", fontSize: 13, fontWeight: 700, color: "#F1F5F9" },
+  funnelDesc: { display: "block", fontSize: 10, color: "#64748B", marginTop: 2 },
+  funnelBarWrap: { flex: 1, display: "flex", alignItems: "center", gap: 8 },
+  funnelBar: { height: 36, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "flex-end", paddingRight: 12, minWidth: 40, transition: "width .5s ease" },
+  funnelVal: { fontSize: 15, fontWeight: 700, color: "#fff", textShadow: "0 1px 3px rgba(0,0,0,.3)" },
+  funnelRate: { fontSize: 11, color: "#64748B", fontWeight: 500, whiteSpace: "nowrap" },
+  funnelCards: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 10, marginBottom: 16 },
+  funnelCard: { background: "rgba(22,32,50,.6)", borderRadius: 12, border: "1px solid #1e293b88", padding: "16px 14px", textAlign: "center" },
+  funnelCardVal: { fontSize: 28, fontWeight: 700, color: "#F1F5F9", marginBottom: 4 },
+  funnelCardLabel: { fontSize: 11, color: "#64748B", fontWeight: 600, textTransform: "uppercase", letterSpacing: ".04em" },
+  progressBg: { height: 6, borderRadius: 3, background: "#1e293b", overflow: "hidden" },
+  progressFill: { height: "100%", borderRadius: 3, transition: "width .4s ease" },
+  /* user */
+  userWrap: { display: "flex", alignItems: "center", gap: 8, marginLeft: 4, paddingLeft: 8, borderLeft: "1px solid #334155" },
+  avatar: { width: 26, height: 26, borderRadius: "50%", border: "1.5px solid #334155" },
+  userName: { fontSize: 12, color: "#94A3B8", fontWeight: 500, maxWidth: 80, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" },
+  logoutBtn: { background: "none", border: "1px solid #334155", borderRadius: 6, color: "#64748B", fontSize: 11, padding: "4px 8px", cursor: "pointer", fontFamily: "'DM Sans',system-ui,sans-serif", transition: "all .15s" },
   /* publish & bookings */
   publishBtn: { background: "linear-gradient(135deg,#10B981,#059669)", border: "none", borderRadius: 8, color: "#fff", padding: "10px 16px", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans',system-ui,sans-serif", boxShadow: "0 2px 8px #10B98133", transition: "all .15s" },
   bookingsBtn: { background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#E2E8F0", padding: "10px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans',system-ui,sans-serif", transition: "all .15s" },
+  shareBtn: { background: "linear-gradient(135deg,#6366F1,#8B5CF6)", border: "none", borderRadius: 8, color: "#fff", padding: "10px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans',system-ui,sans-serif", boxShadow: "0 2px 8px #6366F133", transition: "all .15s" },
   publishHint: { marginTop: 14, background: "#10B98115", border: "1px solid #10B98133", borderRadius: 12, padding: "14px 18px", fontSize: 13, color: "#10B981", lineHeight: 1.8 },
   publishLink: { display: "flex", alignItems: "center", gap: 8, marginTop: 6, background: "#0f172a", borderRadius: 8, padding: "8px 12px" },
   copySmBtn: { background: "#334155", border: "none", borderRadius: 6, color: "#E2E8F0", padding: "4px 10px", fontSize: 11, cursor: "pointer", fontFamily: "'DM Sans',system-ui,sans-serif", fontWeight: 600 },
