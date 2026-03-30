@@ -514,6 +514,7 @@ function BookingView({ items, token, userId, userSlug }) {
   const [bookings, setBookings] = useState([]);
   const [loadingBookings, setLoadingBookings] = useState(false);
   const [showBookings, setShowBookings] = useState(false);
+  const [rejectingId, setRejectingId] = useState(null);
 
   const handlePublish = async () => {
     if (!token) return alert("请先登录");
@@ -559,6 +560,24 @@ function BookingView({ items, token, userId, userSlug }) {
       }
     } catch { alert("Network error"); }
     setLoadingBookings(false);
+  };
+
+  const handleReject = async (bookingId) => {
+    if (!confirm("确定拒绝此预约？将发送邮件通知对方。")) return;
+    setRejectingId(bookingId);
+    try {
+      const r = await fetch(`/api/bookings?id=${bookingId}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (r.ok) {
+        setBookings((prev) => prev.filter((b) => b.id !== bookingId));
+      } else {
+        const d = await r.json();
+        alert(d.error || "拒绝失败");
+      }
+    } catch { alert("网络错误"); }
+    setRejectingId(null);
   };
 
   const WEEKDAYS_CN = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
@@ -831,15 +850,26 @@ function BookingView({ items, token, userId, userSlug }) {
             const startM = String(b.start_min % 60).padStart(2, "0");
             return (
               <div key={i} style={S.bookingRow}>
-                <div style={S.bookingMain}>
-                  <span style={S.bookingDate}>📅 {b.date} {startH}:{startM} BJT</span>
-                  <span style={S.bookingName}>{b.booker_name}</span>
-                  {b.booker_company && <span style={S.bookingCompany}>@ {b.booker_company}</span>}
-                </div>
-                <div style={S.bookingMeta}>
-                  {b.booker_position && <span>💼 {b.booker_position}</span>}
-                  <a href={`mailto:${b.booker_email}`} style={S.bookingEmail}>✉️ {b.booker_email}</a>
-                  {b.notes && <span style={S.bookingNotes}>📝 {b.notes}</span>}
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
+                  <div style={{ flex: 1 }}>
+                    <div style={S.bookingMain}>
+                      <span style={S.bookingDate}>📅 {b.date} {startH}:{startM} BJT</span>
+                      <span style={S.bookingName}>{b.booker_name}</span>
+                      {b.booker_company && <span style={S.bookingCompany}>@ {b.booker_company}</span>}
+                    </div>
+                    <div style={S.bookingMeta}>
+                      {b.booker_position && <span>💼 {b.booker_position}</span>}
+                      <a href={`mailto:${b.booker_email}`} style={S.bookingEmail}>✉️ {b.booker_email}</a>
+                      {b.notes && <span style={S.bookingNotes}>📝 {b.notes}</span>}
+                    </div>
+                  </div>
+                  <button
+                    style={{ ...S.rejectBtn, opacity: rejectingId === b.id ? 0.5 : 1 }}
+                    disabled={rejectingId === b.id}
+                    onClick={() => handleReject(b.id)}
+                  >
+                    {rejectingId === b.id ? "⏳ 处理中..." : "✕ 拒绝"}
+                  </button>
                 </div>
               </div>
             );
@@ -1333,4 +1363,5 @@ const S = {
   bookingMeta: { display: "flex", gap: 12, fontSize: 12, color: "#64748B", flexWrap: "wrap" },
   bookingEmail: { color: "#60A5FA", textDecoration: "none" },
   bookingNotes: { color: "#94A3B8", fontStyle: "italic" },
+  rejectBtn: { background: "#EF444418", border: "1px solid #EF444433", borderRadius: 6, color: "#EF4444", fontSize: 11, fontWeight: 600, padding: "6px 12px", cursor: "pointer", fontFamily: ff, transition: "all .15s", whiteSpace: "nowrap", flexShrink: 0 },
 };
