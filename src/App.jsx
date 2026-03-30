@@ -735,9 +735,6 @@ function BookingView({ items, token, userId, userSlug }) {
           }}>
             🔗 分享预约页
           </button>
-          <button style={S.bookingsBtn} onClick={loadBookings}>
-            📋 查看预约
-          </button>
         </div>
       </div>
 
